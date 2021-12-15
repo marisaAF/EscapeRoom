@@ -51,8 +51,12 @@ public class EscapeRoom {
         answerInput.setBounds(75, 190, 150, 25);
 
         tryAgain.addActionListener(new CreateWayListener());
+        clock.addActionListener(new CreateWayListener());
+        vendingMachine.addActionListener(new CreateWayListener());
+        table.addActionListener(new CreateWayListener());
+        waterFountain.addActionListener(new CreateWayListener());
 
-        //panel.add(tryAgain);
+        panel.add(tryAgain);
         panel.add(showResults);
         panel.add(clock);
         panel.add(vendingMachine);
@@ -62,10 +66,6 @@ public class EscapeRoom {
         frame.add(panel);
         panel.setLayout(null);
         frame.setVisible(true);
-    }
-
-    public static void getUserInput() {
-        userInput = Double.parseDouble(answerInput.getText());
     }
 
     private static class CreateWayListener implements ActionListener {
@@ -92,7 +92,10 @@ public class EscapeRoom {
         panel.remove(vendingMachine);
         panel.remove(waterFountain);
         panel.remove(table);
+
         JOptionPane.showMessageDialog(null, " Using a decimal display the time!");
+        userInput = Double.parseDouble(answerInput.getText());
+
         if (userInput <= 8.30) {
             showResults.setText("You made it in time!");
         } else {
@@ -107,7 +110,10 @@ public class EscapeRoom {
         panel.remove(clock);
         panel.remove(waterFountain);
         panel.remove(table);
+
         JOptionPane.showMessageDialog(null, " If there are four sheep, two dogs and one herds-men, how many feet are there? (decimal form)");
+        userInput = Double.parseDouble(answerInput.getText());
+
         if (userInput == 2.0) {
             showResults.setText("Correct, Claim your handcuff key");
         } else {
@@ -122,7 +128,10 @@ public class EscapeRoom {
         panel.remove(vendingMachine);
         panel.remove(waterFountain);
         panel.remove(clock);
+
         JOptionPane.showMessageDialog(null, " 7 people meet at a party. if each person shakes hands with evey other person, once, how many handshakes will there be? (decimal form)");
+        userInput = Double.parseDouble(answerInput.getText());
+
         if (userInput == 21.0) {
             showResults.setText("Good job you have found the key card!!");
         } else {
@@ -137,7 +146,10 @@ public class EscapeRoom {
         panel.remove(vendingMachine);
         panel.remove(clock);
         panel.remove(table);
+
         JOptionPane.showMessageDialog(null, " What is the next number in the pattern-2,3,5,9,17? (decimal form)");
+        userInput = Double.parseDouble(answerInput.getText());
+
         if (userInput == 33.0) {
             showResults.setText("Great job, you have found your escape code!");
         } else {
